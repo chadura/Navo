@@ -15,3 +15,36 @@ New World Navigator - a modern memory safe browser from India.
 - [ ] Memory safe JS Parser
 - [ ] CPU and GPU enabled thread safe rendering engine
 
+
+## Development Requirements 
+
+- Rust 1.72+
+- Node 18+
+- Yarn
+- NPM 8.+
+
+
+## Other Packages and modules
+
+### Rust
+ - Tauri
+ - Chrono
+ - Serde
+
+
+## Build and Run
+
+
+### Clone 
+```sh
+git clone https://github.com/chadura/Navo.git
+```
+
+
+### Install dependencies
+```sh
+
+cd Navo/navo
+yarn
+yarn tauri dev
+``` 	 
