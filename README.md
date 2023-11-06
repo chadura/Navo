@@ -4,7 +4,6 @@ New World Navigator - a modern memory safe browser from India.
 
 **Designed and Developed by Chadura Tech Private Limited**
 
-
 ## Phase - I Features
 
 - [ ] Modern User Interface
@@ -14,14 +13,6 @@ New World Navigator - a modern memory safe browser from India.
 - [ ] 0.1 version CSS Parsing  Engine
 - [ ] Memory safe JS Parser
 - [x] CPU and GPU enabled thread safe rendering engine
-
-
-## Phase - II Features
-
-- [ ] Optimized search engine in developed in Rust
-- [ ] Analytics window and user data tracker
-- [ ] Rewards crypto points system based on user actions
-- [ ] In built VPN support
 
 
 ## Development Requirements 
@@ -56,4 +47,9 @@ yarn
 yarn tauri dev
 ``` 	 
 
+## Phase - II Features
 
+- [ ] Optimized search engine in developed in Rust
+- [ ] Analytics window and user data tracker
+- [ ] Rewards crypto points system based on user actions
+- [ ] In built VPN support
