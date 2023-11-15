@@ -8,10 +8,10 @@ New World Navigator - a modern memory safe browser from India.
 
 - [ ] Modern User Interface
 - [x] Optimum executable binary version for Windows, MacOS and Linux
-- [ ] 0.1 version Borwser Engine
+- [ ] 0.1 version Browser Engine
 - [ ] 0.1 version HTML Parsing Engine
 - [ ] 0.1 version CSS Parsing  Engine
-- [ ] Memory safe JS Parser
+- [ ] Memory-safe JS Parser
 - [x] CPU and GPU enabled thread safe rendering engine
 
 
