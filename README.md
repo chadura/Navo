@@ -48,6 +48,40 @@ yarn tauri dev
 ``` 	 
 
 
+
+## Protoype Stage Requirements
+
+
+### Target Platforms
+
+- [ ] Windows Build
+- [ ] MacOS Build
+- [ ] Linux Build
+- [ ] iOS Build
+- [ ] Android Build
+
+### Window Options
+
+- [ ] Search bar
+- [ ] Search Engine Selection
+- [ ] New Tab
+- [ ] Multiple Tabs
+- [ ] Private Tab
+- [ ] New Window
+- [ ] New Private Window
+
+### Resource Metrics
+
+- [ ] Overall RAM usage
+    - [ ] Windows 7 / 10 / 11
+    - [ ] RedHat / Fedora / CentOS 
+    - [ ] Debian / Ubuntu / Mmint
+    - [ ] MacOS
+
+- [ ] Overall CPU Load
+- [ ] Tab RAM usage
+- [ ] Tab CPU usage
+
 ## Phase - II Features
 
 - [ ] Optimized search engine in developed in Rust
