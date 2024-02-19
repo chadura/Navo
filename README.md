@@ -54,9 +54,9 @@ yarn tauri dev
 
 ### Target Platforms
 
-- [ ] Windows Build
-- [ ] MacOS Build
-- [ ] Linux Build
+- [x] Windows Build
+- [x] MacOS Build
+- [x] Linux Build
 - [ ] iOS Build
 - [ ] Android Build
 
