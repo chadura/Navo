@@ -15,14 +15,15 @@
       <div class="flex bg-white rounded-full">
         <input
           type="search"
+          v-model="search.query"
           class="rounded-full w-full px-2"
           placeholder="Search Here"
           name=""
           id=""
         />
-        <button class="flex items-center">
+        <router-link to="list" class="flex items-center">
           <span class="material-symbols-outlined"> search </span>
-        </button>
+        </router-link>
       </div>
       <div class="flex gap-x-3">
         <button>
@@ -96,6 +97,7 @@
       <div class="flex bg-white w-[50%] rounded-full">
         <input
           type="search"
+          v-model="search.query"
           class="w-[90%] border rounded-full p-1 focus:"
           placeholder="What you are looking for?"
           name=""
@@ -115,6 +117,9 @@ export default {
   data() {
     return {
       isMenuOpen: false,
+      search: {
+        query: "",
+      },
     };
   },
   components: {},
