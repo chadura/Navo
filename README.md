@@ -8,10 +8,10 @@ New World Navigator - a modern memory safe browser from India.
 
 - [ ] Modern User Interface
 - [x] Optimum executable binary version for Windows, MacOS and Linux
-- [ ] 0.1 version Borwser Engine
+- [ ] 0.1 version Browser Engine
 - [ ] 0.1 version HTML Parsing Engine
 - [ ] 0.1 version CSS Parsing  Engine
-- [ ] Memory safe JS Parser
+- [ ] Memory-safe JS Parser
 - [x] CPU and GPU enabled thread safe rendering engine
 
 
@@ -46,6 +46,41 @@ cd Navo/navo
 yarn
 yarn tauri dev
 ``` 	 
+
+
+
+## Protoype Stage Requirements
+
+
+### Target Platforms
+
+- [x] Windows Build
+- [x] MacOS Build
+- [x] Linux Build
+- [ ] iOS Build
+- [ ] Android Build
+
+### Window Options
+
+- [ ] Search bar
+- [ ] Search Engine Selection
+- [ ] New Tab
+- [ ] Multiple Tabs
+- [ ] Private Tab
+- [ ] New Window
+- [ ] New Private Window
+
+### Resource Metrics
+
+- [ ] Overall RAM usage
+    - [ ] Windows 7 / 10 / 11
+    - [ ] RedHat / Fedora / CentOS 
+    - [ ] Debian / Ubuntu / Mmint
+    - [ ] MacOS
+
+- [ ] Overall CPU Load
+- [ ] Tab RAM usage
+- [ ] Tab CPU usage
 
 ## Phase - II Features
 
