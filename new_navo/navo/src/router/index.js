@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import ListPage from "../views/ListPage.vue";
 import SettingsView from "@/views/SettingsView.vue";
-import BlogPage from "@/components/BlogPage.vue";
+import ProfileLogin from "../components/ProfileLogin.vue";
 
 const routes = [
   {
@@ -16,15 +16,11 @@ const routes = [
     component: SettingsView,
   },
   {
-    path: "/list",
+    path: "/list-page",
     name: "ListPage",
     component: ListPage,
   },
-  {
-    path: "/new",
-    name: "BlogPage",
-    component: BlogPage,
-  },
+  { path: "/profile-login", name: "LoginProfile", component: ProfileLogin },
 ];
 
 const router = createRouter({

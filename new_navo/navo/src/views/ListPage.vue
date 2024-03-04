@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="ListPage">
     <ListView />
   </div>
 </template>
