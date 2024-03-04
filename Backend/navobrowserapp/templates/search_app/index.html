@@ -1,0 +1,132 @@
+<!-- templates/search_app/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+    .hide{
+        display: none;
+    }
+        
+    .show{
+        display: block;
+    }
+    #autocomplete-results {
+        overflow-x: hidden;
+        display: none
+        width: 100%;
+        z-index: 1000;
+        margin-top: 0.1rem;
+        overflow-y: auto;
+        max-height: 20rem;
+        background-color: #fff;
+        border: 1px solid rgba(0,0,0,.15);
+        border-radius: .25rem;
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    }
+    
+    #autocomplete-results .dropdown-item {
+        display: block;
+        width: 100%;
+        padding: .375rem .75rem;
+        clear: both;
+        font-weight: 400;
+        color: #212529;
+        text-align: inherit;
+        white-space: nowrap;
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+    }
+    
+    #autocomplete-results .dropdown-item:focus,
+    #autocomplete-results .dropdown-item:hover {
+        color: #007bff;
+        text-decoration: none;
+        background-color: #f8f9fa;
+    }
+    
+ </style>
+
+</head>
+<body>
+    <div class="container mt-5">
+        <center>
+            <h1>Navo Browser</h1>
+        
+
+        <form action="" method="post" class="mb-4 flex-row align-center">
+            {% csrf_token %}
+            <div class="form-group col-xl-6 col-lg-6 ">
+                <label for="search" for="query">Search for:</label>
+                <input type="text" class="form-control" id="query" name="keywords" placeholder="Enter search keywords">
+                <div id="autocomplete-results" class="dropdowns-menu text-left" aria-labelledby="query"></div>
+                
+            </div>
+            <div class="col-lg-3 col-xl-3">
+            <button type="submit" class=" btn btn-primary">Search</button>
+
+            </div>
+        </form>
+    </center>
+        {% if results %}
+            <h2>Results</h2>
+            <div class="list-group">
+                {% for result in results %}
+                    <a href="{{ result.href }}" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">{{ result.title }}</h5>
+                        </div>
+                        <p class="mb-1">{{ result.body }}</p>
+                    </a>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>Click Search button to get results</p>
+        {% endif %}
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#query').keyup(function() {
+                var query = $(this).val();
+
+                //console.log(auto.html());
+                $.ajax({
+                    type: 'GET',
+                    url: '{% url 'autocomplete' %}', // Replace 'autocomplete' with the actual URL pattern name for autocomplete
+                    data: {
+                        'query': query
+                    },
+                    success: function(data) {
+                        var dropdown = $('#autocomplete-results');
+                        dropdown.empty();
+                        if (data.results.length > 0) {
+                            $.each(data.results, function(index, result) {
+                                console.log(data.results);
+                                dropdown.append('<a href="'+result.href+'" class="dropdown-item">' + result.title + '</a>');
+                            });
+                            dropdown.addClass('show'); // Show the dropdown
+                        } else {
+                            dropdown.removeClass('show'); // Hide the dropdown if no results
+                        }
+                    }
+                });
+            });
+            $(document).on('click', function(event) {
+                console.log("clicked");
+               // if (!$(event.target).closest('#autocomplete-results').length && !$(event.target).is('#query')) {
+                    $('#autocomplete-results').removeClass('show');
+                    $('#autocomplete-results').addClass('hide');
+               // }
+            });
+        });
+        
+    </script>
+</body>
+</html>
