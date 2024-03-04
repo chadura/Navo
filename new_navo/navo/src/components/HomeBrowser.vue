@@ -11,8 +11,10 @@
           name=""
           id=""
         />
-        <button class="flex items-center absolute right-4 top-4 text-4xl">
-          <span class="material-symbols-outlined"> search </span>
+        <button class="flex items-center absolute right-4 top-2">
+          <span class="material-symbols-outlined text-black text-4xl">
+            search
+          </span>
         </button>
       </div>
     </div>

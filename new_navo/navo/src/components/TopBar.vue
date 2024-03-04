@@ -19,15 +19,15 @@
         refresh
       </span>
     </div>
-    <div class="flex bg-white rounded-full">
+    <div class="flex bg-white items-center rounded-full relative">
       <input
         type="search"
-        class="rounded-full w-full px-2"
+        class="rounded-full border border-solid border-black w-full px-2"
         placeholder="Search Here"
         name=""
         id=""
       />
-      <router-link to="list-page" lass="flex items-center">
+      <router-link to="list-page" class="flex items-center absolute right-0">
         <span class="material-symbols-outlined"> search </span>
       </router-link>
     </div>

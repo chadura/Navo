@@ -1,6 +1,8 @@
 <template>
-  <h1 class="text-gray-500 text-left text-2xl px-5">Browser Privacy</h1>
-  <section class="p-10 text-left flex flex-col gap-y-6">
+  <h1 class="text-gray-500 text-left text-2xl px-5 dark:text-white font-bold">
+    Browser Privacy
+  </h1>
+  <section class="p-10 text-left h-screen flex flex-col gap-y-6">
     <div class="flex justify-between w-3/4">
       <span>
         <h1 class="font-bold">Take Your Web With You</h1>

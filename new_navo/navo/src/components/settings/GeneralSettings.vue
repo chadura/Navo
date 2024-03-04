@@ -1,6 +1,8 @@
 <template>
-  <h1 class="text-gray-500 text-left text-2xl px-5">General Settings</h1>
-  <div class="text-left pl-10">
+  <h1 class="text-gray-500 text-left text-2xl px-5 font-bold dark:text-white">
+    General Settings
+  </h1>
+  <div class="text-left pl-10 dark:bg-gray-700 dark:text-white">
     <section class="flex flex-col gap-y-8 mt-10">
       <div>
         <p>More from Navo</p>

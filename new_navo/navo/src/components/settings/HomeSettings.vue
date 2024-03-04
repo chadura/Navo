@@ -1,7 +1,7 @@
 <template>
   <div class="p-5 text-left">
     <div>
-      <h1 class="text-gray-500 text-xl">Home</h1>
+      <h1 class="text-gray-500 text-xl font-bold dark:text-white">Home</h1>
       <br />
       <h1>Default Search Engine</h1>
       <p class="text-gray-500">

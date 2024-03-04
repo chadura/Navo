@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="dark:bg-gray-700 dark:text-white">
     <div class="w-full flex">
       <div
         class="w-[30%] mflex flex-col items-center border-r justify-center p-10 gap-y-5"
@@ -48,7 +48,7 @@
         </button>
       </div>
       <div class="w-full">
-        <div class="flex items-center justify-center">
+        <div class="flex items-center justify-center pt-2">
           <input
             type="search"
             class="border"

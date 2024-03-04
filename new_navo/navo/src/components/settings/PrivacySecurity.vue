@@ -1,5 +1,7 @@
 <template>
-  <h1 class="text-gray-500 text-left px-10 text-2xl">Browser Privacy</h1>
+  <h1 class="text-gray-500 text-left px-10 text-2xl dark:text-white font-bold">
+    Browser Privacy
+  </h1>
   <section class="text-left flex flex-col px-16 gap-y-6">
     <h1 class="font-bold">Enhanced Tracking Protection</h1>
     <div class="flex gap-x-5 w-full tems-center">

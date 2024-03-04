@@ -1,9 +1,11 @@
 <template>
   <TopBar />
-  <div class="w-full mt-5 text-left">
-    <div class="flex gap-x-10">
+  <div
+    class="w-full text-left dark:bg-gray-700 mx-auto dark:text-white h-screen"
+  >
+    <div class="flex p-5 gap-x-10">
       <a href="https://www.google.com" class="text-2xl font-bold">Google</a>
-      <div class="w-full flex flex-col gap-y-1">
+      <div class="w-full flex flex-col gap-y-3">
         <input
           type="search"
           placeholder="search"
