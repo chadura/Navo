@@ -1,0 +1,10 @@
+asgiref==3.7.2
+certifi==2024.2.2
+cffi==1.16.0
+click==8.1.7
+curl_cffi==0.6.2
+Django==5.0.2
+duckduckgo_search==4.5.0
+lxml==5.1.0
+pycparser==2.21
+sqlparse==0.4.4
