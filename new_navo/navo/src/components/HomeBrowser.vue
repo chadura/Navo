@@ -1,110 +1,35 @@
 <template>
-  <div class="relative bg-blue-400">
-    <div class="flex bg-gray-600 p-1 gap-x-10 justify-between">
-      <div class="flex gap-x-3">
-        <span class="material-symbols-outlined text-lg text-white">
-          arrow_back
-        </span>
-        <span class="material-symbols-outlined text-lg text-white">
-          arrow_forward
-        </span>
-        <span class="material-symbols-outlined text-white text-lg">
-          refresh
-        </span>
-      </div>
-      <div class="flex bg-white rounded-full">
-        <input
-          type="search"
-          v-model="search.query"
-          class="rounded-full w-full px-2"
-          placeholder="Search Here"
-          name=""
-          id=""
-        />
-        <router-link to="list" class="flex items-center">
-          <span class="material-symbols-outlined"> search </span>
-        </router-link>
-      </div>
-      <div class="flex gap-x-3">
-        <button>
-          <span class="material-symbols-outlined text-white text-lg">
-            bookmarks
-          </span>
-        </button>
+  <div class="relative h-screen bg z-0 dark:bg-gray-700 dark:text-white">
+    <TopBar />
 
-        <button>
-          <span class="material-symbols-outlined text-white text-lg">
-            account_circle
-          </span>
-        </button>
-        <button>
-          <span class="material-symbols-outlined text-white text-lg">
-            extension
-          </span>
-        </button>
-        <button @click="toggleMenu">
-          <span class="material-symbols-outlined text-white text-lg">
-            menu
-          </span>
-        </button>
-      </div>
-    </div>
-    <div
-      v-if="isMenuOpen"
-      class="shadow-md w-[20%] bg-gray-500 text-white absolute right-0"
+    <button
+      @click="isOpen"
+      class="material-symbols-outlined fixed text-gray-200 right-6 top-24"
     >
-      <div class="flex justify-between px-3">
-        <h2>Newtab</h2>
-        <p class="text-gray-300">Ctrl+T</p>
+      settings
+    </button>
+
+    <div
+      class="absolute w-full top-0 h-full flex flex-col items-center justify-center gap-y-10"
+    >
+      <div class="flex flex-col lg:flex-row items-center gap-1">
+        <img src="@/assets/navo-icon.png" class="w-[100px] h-[100px]" />
+        <h1 class="font-bold text-xl lg:text-xl text-gray-200">Navo</h1>
       </div>
-      <div class="flex justify-between px-3">
-        <h2>New Window</h2>
-        <p class="text-gray-300">Ctrl+N</p>
-      </div>
-      <div class="flex justify-between px-3">
-        <h2>New private Window</h2>
-        <p class="text-gray-300">Ctrl+Shift+p</p>
-      </div>
-      <br />
-      <div class="px-3 text-left">
-        <h2>History</h2>
-      </div>
-      <div class="flex justify-between px-3">
-        <h2>Downloads</h2>
-        <p class="text-gray-300">Ctrl+Shift+Y</p>
-      </div>
-      <div class="px-3 text-left">
-        <h2>Passwords</h2>
-      </div>
-      <div class="px-3 text-left">
-        <h2>bookmarks</h2>
-      </div>
-      <br />
-      <div class="px-3 text-left">
-        <!-- <a href="" target="_blank">Settings</a> -->
-        <router-link to="/settings">settings</router-link>
-      </div>
-      <div class="px-3 text-left">
-        <h2>Help</h2>
-      </div>
-      <div class="px-3 text-left">
-        <h2>More tools</h2>
-      </div>
-      <br />
-    </div>
-    <div class="flex flex-col items-center h-screen justify-center gap-y-5">
-      <h1 class="text-2xl font-sans">NAVO</h1>
-      <div class="flex bg-white w-[50%] rounded-full">
+      <div class="flex bg-white lg:w-[30%] rounded-lg relative">
         <input
-          type="search"
-          v-model="search.query"
-          class="w-[90%] border rounded-full p-1 focus:"
+          type="text"
+          class="outline-none font-bold w-[90%] rounded-3xl py-4 px-2 dark:text-black"
           placeholder="What you are looking for?"
           name=""
           id=""
         />
-        <button class="flex items-center">
-          <span class="material-symbols-outlined"> search </span>
+        <button
+          class="flex items-center justify-center absolute right-4 h-full"
+        >
+          <span class="material-symbols-outlined text-gray-600 text-2xl">
+            search
+          </span>
         </button>
       </div>
     </div>
@@ -112,21 +37,27 @@
 </template>
 
 <script>
+import TopBar from "@/components/TopBar.vue";
 export default {
   name: "HomeView",
   data() {
     return {
-      isMenuOpen: false,
-      search: {
-        query: "",
-      },
+      isBarOPen: false,
     };
   },
-  components: {},
-  methods: {
-    toggleMenu() {
-      this.isMenuOpen = !this.isMenuOpen;
-    },
+  components: {
+    TopBar,
   },
 };
 </script>
+
+<style scoped>
+.bg {
+  background-color: #4c119b;
+  background-image: linear-gradient(
+    121.55deg,
+    #0f82d3 17.34%,
+    #253a1f 113.19%
+  ) !important;
+}
+</style>
