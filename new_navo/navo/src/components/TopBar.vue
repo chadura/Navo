@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex bg-gray-600 p-1 gap-x-10 justify-between dark:bg-white dark:text-gray-700"
+    class="flex bg-gray-600 p-1 py-4 gap-x-10 justify-between dark:bg-white dark:text-gray-700"
   >
     <div class="flex gap-x-3">
       <span
@@ -21,8 +21,8 @@
     </div>
     <div class="flex bg-white items-center rounded-full relative">
       <input
-        type="search"
-        class="rounded-full border border-solid border-black w-full px-2"
+        type="text"
+        class="rounded-full border border-solid outline-none py-2 w-full px-2"
         placeholder="Search Here"
         name=""
         id=""
@@ -31,7 +31,7 @@
         <span class="material-symbols-outlined"> search </span>
       </router-link>
     </div>
-    <div class="flex gap-x-3">
+    <div class="flex items-center gap-x-3">
       <button>
         <span
           class="material-symbols-outlined text-white dark:text-black text-lg"
@@ -67,7 +67,7 @@
     v-if="isMenuOpen"
     class="shadow-md w-[20%] bg-gray-500 text-white dark:text-white absolute z-10 right-0"
   >
-    <a target="_blank" href="/" class="flex justify-between px-3">
+    <a target="_blank" href="/" class="flex items-center justify-between px-3">
       <h2>Newtab</h2>
       <p class="text-gray-300">Ctrl+T</p>
     </a>

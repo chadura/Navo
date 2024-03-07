@@ -1,7 +1,10 @@
 <template>
   <TopBar />
   <div class="relative bg-blue-400 z-0 dark:bg-gray-700 dark:text-white">
-    <button class="material-symbols-outlined absolute right-4 top-4">
+    <button
+      @click="isOpen"
+      class="material-symbols-outlined absolute right-4 top-4"
+    >
       settings
     </button>
     <div class="flex flex-col items-center h-screen justify-center gap-y-5">
@@ -28,6 +31,11 @@
 import TopBar from "@/components/TopBar.vue";
 export default {
   name: "HomeView",
+  data() {
+    return {
+      isBarOPen: false,
+    };
+  },
   components: {
     TopBar,
   },
