@@ -1,8 +1,8 @@
 <template>
-  <div class="dark:bg-gray-700 dark:text-white">
+  <div class="dark:bg-gray-700 dark:text-white bg-gray-800 h-screen">
     <div class="w-full flex">
       <div
-        class="w-[30%] mflex flex-col items-center border-r justify-center p-10 gap-y-5"
+        class="w-[30%] fixed left-0 z-20 flex flex-col items-center justify-center p-10 gap-y-5"
       >
         <button
           class="hover:bg-gray-400 w-full"
@@ -47,7 +47,7 @@
           </h1>
         </button>
       </div>
-      <div class="w-full">
+      <div class="w-full ml-[30%]">
         <div class="flex items-center justify-center pt-2">
           <input
             type="search"

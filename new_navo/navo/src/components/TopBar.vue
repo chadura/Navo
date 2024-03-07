@@ -1,40 +1,57 @@
 <template>
   <div
-    class="flex bg-gray-600 p-1 py-4 gap-x-10 justify-between dark:bg-white dark:text-gray-700"
+    class="sticky top-0 z-50 flex flex-row px-6 bg-gray-800 p-1 py-4 gap-x-10 lg:items-center justify-between dark:bg-white dark:text-gray-700"
   >
-    <div class="flex gap-x-3">
+    <div class="flex items-center gap-x-3">
       <span
-        class="material-symbols-outlined text-lg text-white dark:text-black"
+        class="text-left material-symbols-outlined text-lg text-white dark:text-black"
       >
         arrow_back
       </span>
       <span
-        class="material-symbols-outlined text-lg text-white dark:text-black"
+        class="text-left material-symbols-outlined text-lg text-white dark:text-black"
       >
         arrow_forward
       </span>
       <span
-        class="material-symbols-outlined text-white dark:text-black text-lg"
+        class="text-left material-symbols-outlined text-white dark:text-black text-lg"
       >
         refresh
       </span>
     </div>
+
     <div class="flex bg-white items-center rounded-full relative">
-      <input
+      <!-- <input
         type="text"
-        class="rounded-full border border-solid outline-none py-2 w-full px-2"
+        class="rounded-xl text-white fold-bold bg-gray-600 outline-none py-2 w-full lg:w-[500px] px-2"
         placeholder="Search Here"
         name=""
         id=""
+      /> -->
+
+      <input
+        type="text"
+        placeholder="Search"
+        class="w-full bg-gray-600 text-gray-200 font-bold rounded-xl outline-none p-1 py-3 px-4"
       />
-      <router-link to="list-page" class="flex items-center absolute right-0">
-        <span class="material-symbols-outlined"> search </span>
+
+      <router-link
+        to="list-page"
+        class="flex items-center absolute right-4 shrink-0"
+      >
+        <div class="w-full">
+          <span
+            class="shrink-0 text-left w-full text-gray-200 text-base material-symbols-outlined"
+          >
+            search
+          </span>
+        </div>
       </router-link>
     </div>
     <div class="flex items-center gap-x-3">
       <button>
         <span
-          class="material-symbols-outlined text-white dark:text-black text-lg"
+          class="text-left material-symbols-outlined text-white dark:text-black text-lg"
         >
           bookmarks
         </span>
@@ -42,21 +59,21 @@
 
       <router-link to="/profile-login">
         <span
-          class="material-symbols-outlined text-white dark:text-black text-lg"
+          class="text-left material-symbols-outlined text-white dark:text-black text-lg"
         >
           account_circle
         </span>
       </router-link>
       <button>
         <span
-          class="material-symbols-outlined text-white dark:text-black text-lg"
+          class="text-left material-symbols-outlined text-white dark:text-black text-lg"
         >
           extension
         </span>
       </button>
       <button @click="toggleMenu">
         <span
-          class="material-symbols-outlined text-white dark:text-black text-lg"
+          class="text-left material-symbols-outlined text-white dark:text-black text-lg"
         >
           menu
         </span>
@@ -65,43 +82,47 @@
   </div>
   <div
     v-if="isMenuOpen"
-    class="shadow-md w-[20%] bg-gray-500 text-white dark:text-white absolute z-10 right-0"
+    class="shadow-md lg:w-[35%] xl:w-[20%] bg-gray-600 py-2 text-white dark:text-white fixed z-50 right-0"
   >
-    <a target="_blank" href="/" class="flex items-center justify-between px-3">
-      <h2>Newtab</h2>
+    <a
+      target="_blank"
+      href="/"
+      class="flex items-center justify-between px-3 py-1"
+    >
+      <h2 class="text-left">Newtab</h2>
       <p class="text-gray-300">Ctrl+T</p>
     </a>
-    <div class="flex justify-between px-3">
-      <h2>New Window</h2>
+    <div class="flex justify-between px-3 py-1">
+      <h2 class="text-left">New Window</h2>
       <p class="text-gray-300">Ctrl+N</p>
     </div>
-    <div class="flex justify-between px-3">
-      <h2>New private Window</h2>
+    <div class="flex justify-between px-3 py-1">
+      <h2 class="text-left">New private Window</h2>
       <p class="text-gray-300">Ctrl+Shift+p</p>
     </div>
     <br />
-    <div class="px-3 text-left">
-      <h2>History</h2>
+    <div class="px-3 py-1 text-left">
+      <h2 class="text-left">History</h2>
     </div>
-    <div class="flex justify-between px-3">
-      <h2>Downloads</h2>
+    <div class="flex justify-between px-3 py-1">
+      <h2 class="text-left">Downloads</h2>
       <p class="text-gray-300">Ctrl+Shift+Y</p>
     </div>
-    <div class="px-3 text-left">
-      <h2>Passwords</h2>
+    <div class="px-3 py-1 text-left">
+      <h2 class="text-left">Passwords</h2>
     </div>
-    <div class="px-3 text-left">
-      <h2>bookmarks</h2>
+    <div class="px-3 py-1 text-left">
+      <h2 class="text-left">bookmarks</h2>
     </div>
     <br />
-    <div class="px-3 text-left">
+    <div class="px-3 py-1 text-left">
       <router-link to="/settings">settings</router-link>
     </div>
-    <div class="px-3 text-left">
-      <h2>Help</h2>
+    <div class="px-3 py-1 text-left">
+      <h2 class="text-left">Help</h2>
     </div>
-    <div class="px-3 text-left">
-      <h2>More tools</h2>
+    <div class="px-3 py-1 text-left">
+      <h2 class="text-left">More tools</h2>
     </div>
     <br />
   </div>
