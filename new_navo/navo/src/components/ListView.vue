@@ -1,8 +1,6 @@
 <template>
   <TopBar />
-  <div
-    class="w-full text-left dark:bg-gray-700 mx-auto dark:text-white h-screen bg-gray-800"
-  >
+  <div class="w-full text-left mx-auto h-screen bg-gray-800">
     <div
       class="flex items-start p-5 gap-x-10 sticky top-[72px] bg-gray-800 z-40"
     >

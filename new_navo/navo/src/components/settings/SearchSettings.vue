@@ -1,113 +1,117 @@
 <template>
   <div class="p-5 text-left">
-    <div>
-      <h1 class="text-gray-500 text-xl dark:text-white font-bold">Search</h1>
+    <div class="flex flex-col gap-2">
+      <h1 class="text-gray-200 text-xl font-bold">Search</h1>
       <br />
-      <h1>Default Search Engine</h1>
-      <p class="text-gray-500">
+      <h1 class="text-gray-200 my-2">Default Search Engine</h1>
+      <p class="text-gray-200">
         This is your default search engine in the address bar and search bar.
         You can switch it at any time.
       </p>
-      <select name="" id="" class="border-2">
-        <option value="">Google</option>
-        <option value="">Bing</option>
-        <option value="">Google</option>
-        <option value="">Google</option>
-      </select>
+      <div>
+        <select name="" id="" class="border-2 outline-none">
+          <option value="">Navo</option>
+          <option value="">Navo</option>
+          <option value="">Navo</option>
+          <option value="">Navo</option>
+        </select>
+      </div>
     </div>
 
     <div class="py-8">
-      <div>
-        <h1>Search Suggestions</h1>
-        <p class="text-gray-500">
+      <div class="flex flex-col gap-2">
+        <h1 class="text-gray-200">Search Suggestions</h1>
+        <p class="text-gray-200">
           Choose how suggestions from search engines appear.
         </p>
-        <div class="flex">
+        <div class="flex gap-2">
           <input type="checkbox" />
-          <p>Show search suggestions</p>
+          <p class="text-gray-200">Show search suggestions</p>
         </div>
-        <div class="px-5">
-          <div class="flex">
+        <div class="px-5 flex flex-col gap-2">
+          <div class="flex gap-2">
             <input type="checkbox" />
-            <p>
+            <p class="text-gray-200">
               Show search suggestions ahead of browsing history in address bar
               results
             </p>
           </div>
-          <div class="flex">
+          <div class="flex gap-2">
             <input type="checkbox" />
-            <p>Show search suggestions in Private Windows</p>
+            <p class="text-gray-200">
+              Show search suggestions in Private Windows
+            </p>
           </div>
         </div>
-        <a href="" class="text-blue-400 underline"
+        <a href="" class="underline text-gray-200"
           >Change settings for other address bar suggestions</a
         >
       </div>
     </div>
-    <div>
-      <h1>Search Shortcuts</h1>
-      <p class="text-gray-500">
+    <div class="flex flex-col gap-2">
+      <h1 class="text-gray-200 text-xl font-bold">Search Shortcuts</h1>
+      <p class="text-gray-200 pt-2">
         Choose the alternative search engines that appear below the address bar
         and search bar when you start to enter a keyword.
       </p>
     </div>
-    <div class="py-2">
+    <div class="py-2 my-2">
       <table class="border-2 w-[30%]">
         <thead>
-          <tr class="border-2 bg-gray-300">
-            <th class="text-start px-2">|SearchEngine</th>
-            <th class="text-start px-2">|keyword</th>
+          <tr class="border-2">
+            <th class="text-start px-2 py-2 text-gray-200">|SearchEngine</th>
+            <th class="text-start px-2 py-2 text-gray-200">|keyword</th>
           </tr>
         </thead>
         <tbody>
           <tr class="border-2">
-            <td class="px-2">Google</td>
-            <td>@google</td>
-          </tr>
-          <tr class="border-2 bg-gray-300">
-            <td class="px-2">Bing</td>
-            <td>@bing</td>
+            <td class="px-2 py-2 text-gray-200">Google</td>
+            <td class="text-gray-200">@google</td>
           </tr>
           <tr class="border-2">
-            <td class="px-2">DuckDuckGo</td>
-            <td>@duckduckgo,@ddg</td>
-          </tr>
-          <tr class="border-2 bg-gray-300">
-            <td class="px-2">Wikipedia(en)</td>
-            <td>@wikipedia</td>
+            <td class="px-2 py-2 text-gray-200">Bing</td>
+            <td class="text-gray-200">@bing</td>
           </tr>
           <tr class="border-2">
-            <td class="px-2">Bookmarks</td>
-            <td>*</td>
-          </tr>
-          <tr class="border-2 bg-gray-300">
-            <td class="px-2">Bing</td>
-            <td>@bing</td>
+            <td class="px-2 py-2 text-gray-200">DuckDuckGo</td>
+            <td class="text-gray-200">@duckduckgo,@ddg</td>
           </tr>
           <tr class="border-2">
-            <td class="px-2">Tabs</td>
-            <td>%</td>
-          </tr>
-          <tr class="border-2 bg-gray-300">
-            <td class="px-2">History</td>
-            <td>^</td>
+            <td class="px-2 py-2 text-gray-200">Wikipedia(en)</td>
+            <td class="text-gray-200">@wikipedia</td>
           </tr>
           <tr class="border-2">
-            <td class="px-2">Action</td>
-            <td>></td>
+            <td class="px-2 py-2 text-gray-200">Bookmarks</td>
+            <td class="text-gray-200">*</td>
+          </tr>
+          <tr class="border-2">
+            <td class="px-2 py-2 text-gray-200">Bing</td>
+            <td class="text-gray-200">@bing</td>
+          </tr>
+          <tr class="border-2">
+            <td class="px-2 py-2 text-gray-200">Tabs</td>
+            <td class="text-gray-200">%</td>
+          </tr>
+          <tr class="border-2">
+            <td class="px-2 py-2 text-gray-200">History</td>
+            <td class="text-gray-200">^</td>
+          </tr>
+          <tr class="border-2">
+            <td class="px-2 py-2 text-gray-200">Action</td>
+            <td class="text-gray-200">></td>
           </tr>
         </tbody>
       </table>
     </div>
-    <div class="flex gap-28">
-      <button class="border-2 bg-gray-300 font-bold px-2">
+    <div class="flex gap-28 py-10">
+      <button class="bg-blue-600 text-white py-2 font-bold px-2">
         Restore Default Search Engines
       </button>
 
-      <button class="border-2 bg-slate-300 font-bold px-2">Remove</button>
+      <button class="bg-blue-600 font-bold px-2 text-gray-200">Remove</button>
     </div>
     <div class="py-3">
-      <a href="" class="text-blue-400 underline">Find more search Engine</a>
+      <a href="" class="underline text-blue-300">Find more search Engine</a>
     </div>
   </div>
 </template>

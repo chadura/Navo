@@ -1,5 +1,5 @@
 <template>
-  <div class="relative h-screen bg z-0 dark:bg-gray-700 dark:text-white">
+  <div class="relative h-screen bg z-0">
     <TopBar />
 
     <button
@@ -19,7 +19,7 @@
       <div class="flex bg-white lg:w-[30%] rounded-lg relative">
         <input
           type="text"
-          class="outline-none font-bold w-[90%] rounded-3xl py-4 px-2 dark:text-black"
+          class="outline-none font-bold w-[90%] rounded-3xl py-4 px-2"
           placeholder="What you are looking for?"
           name=""
           id=""

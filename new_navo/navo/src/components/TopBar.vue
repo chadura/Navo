@@ -1,21 +1,15 @@
 <template>
   <div
-    class="sticky top-0 z-50 flex flex-row px-6 bg-gray-800 p-1 py-4 gap-x-10 lg:items-center justify-between dark:bg-white dark:text-gray-700"
+    class="sticky top-0 z-50 flex flex-row px-6 bg-gray-800 p-1 py-4 gap-x-10 lg:items-center justify-between"
   >
     <div class="flex items-center gap-x-3">
-      <span
-        class="text-left material-symbols-outlined text-lg text-white dark:text-black"
-      >
+      <span class="text-left material-symbols-outlined text-lg text-gray-200">
         arrow_back
       </span>
-      <span
-        class="text-left material-symbols-outlined text-lg text-white dark:text-black"
-      >
+      <span class="text-left material-symbols-outlined text-lg text-gray-200">
         arrow_forward
       </span>
-      <span
-        class="text-left material-symbols-outlined text-white dark:text-black text-lg"
-      >
+      <span class="text-left material-symbols-outlined text-gray-200 text-lg">
         refresh
       </span>
     </div>
@@ -50,31 +44,23 @@
     </div>
     <div class="flex items-center gap-x-3">
       <button>
-        <span
-          class="text-left material-symbols-outlined text-white dark:text-black text-lg"
-        >
+        <span class="text-left material-symbols-outlined text-white text-lg">
           bookmarks
         </span>
       </button>
 
       <router-link to="/profile-login">
-        <span
-          class="text-left material-symbols-outlined text-white dark:text-black text-lg"
-        >
+        <span class="text-left material-symbols-outlined text-white text-lg">
           account_circle
         </span>
       </router-link>
       <button>
-        <span
-          class="text-left material-symbols-outlined text-white dark:text-black text-lg"
-        >
+        <span class="text-left material-symbols-outlined text-white text-lg">
           extension
         </span>
       </button>
       <button @click="toggleMenu">
-        <span
-          class="text-left material-symbols-outlined text-white dark:text-black text-lg"
-        >
+        <span class="text-left material-symbols-outlined text-white text-lg">
           menu
         </span>
       </button>
@@ -82,7 +68,7 @@
   </div>
   <div
     v-if="isMenuOpen"
-    class="shadow-md lg:w-[35%] xl:w-[20%] bg-gray-600 py-2 text-white dark:text-white fixed z-50 right-0"
+    class="shadow-md lg:w-[35%] xl:w-[20%] bg-gray-600 py-2 text-white fixed z-50 right-0"
   >
     <a
       target="_blank"

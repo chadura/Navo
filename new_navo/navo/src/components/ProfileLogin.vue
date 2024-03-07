@@ -1,9 +1,7 @@
 <template>
   <TopBar />
-  <div class="flex justify-center items-center h-screen dark:bg-gray-700">
-    <div
-      class="shadow-md w-[35%] h-[380px] rounded-xl bg-slate-100 dark:bg-gray-500 dark:text-white"
-    >
+  <div class="flex justify-center items-center h-screen">
+    <div class="shadow-md w-[35%] h-[380px] rounded-xl">
       <div>
         <h2 class="text-center py-5 text-xl font-bold">
           Continue to your Mozilla account
@@ -15,7 +13,7 @@
       <div class="py-5 text-center">
         <input
           type="email"
-          class="border-2 w-[70%] h-[50px] dark:text-black px-5 rounded-md"
+          class="border-2 w-[70%] h-[50px] px-5 rounded-md"
           placeholder="  Enter your email"
         />
       </div>
@@ -26,13 +24,13 @@
           Sign up or sign in
         </button>
       </div>
-      <div class="py-5 text-sm text-gray-600 dark:text-white">
+      <div class="py-5 text-sm text-gray-600">
         <p class="text-center">
           A Mozile account also unlock access to more privacy-protecting
         </p>
         <p class="text-center">products from Mozilla</p>
       </div>
-      <div class="py-1 text-sm text-center text-gray-600 dark:text-white">
+      <div class="py-1 text-sm text-center text-gray-600">
         <p>
           By proceeding,you agree to the
           <a href="" class="underline">Terms of Service</a> and
