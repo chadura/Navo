@@ -1,6 +1,6 @@
 <template>
   <div
-    class="sticky top-0 z-50 flex flex-row px-6 bg-gray-800 p-1 py-4 gap-x-10 lg:items-center justify-between"
+    class="flex bg-gray-600 p-1 gap-x-10 justify-between dark:bg-white dark:text-gray-700"
   >
     <div class="flex items-center gap-x-3">
       <span class="text-left material-symbols-outlined text-lg text-gray-200">
