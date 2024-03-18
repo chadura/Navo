@@ -119,7 +119,7 @@ import settings from "./components/settings/Settings.vue";
       <div class="bg-gray-800">
         <div class="container mx-auto max-w-[1700px] px-6">
           <div
-            class="w-full flex py-10 flex-col gap-y-6 items-start justify-center"
+            class="w-full flex py-10 px-28 flex-col gap-y-6 items-start justify-center"
           >
             <div v-for="i in 10" :key="i" class="flex flex-col gap-y-2">
               <div class="flex gap-x-3">
@@ -160,7 +160,6 @@ import settings from "./components/settings/Settings.vue";
       </div>
     </div>
   </div>
-  <br />
 
 
 

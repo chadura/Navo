@@ -16,7 +16,7 @@
 
     <!-- Search Bar -->
     <div
-      class="flex w-[400px] relative justify-center items-center bg-white dark:text-black rounded-lg"
+      class="flex w-[400px] relative border justify-center items-center bg-white dark:text-black rounded-lg"
     >
       <input type="text" placeholder="Search" class="py-3 w-[350px]" />
       <span class="material-symbols-outlined absolute right-0 cursor-pointer"
