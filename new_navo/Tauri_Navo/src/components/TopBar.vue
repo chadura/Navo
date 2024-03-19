@@ -1,15 +1,21 @@
 <template>
   <div
-    class="flex bg-gray-600 p-1 gap-x-10 justify-between  dark:bg-white dark:text-black"
+    class="flex bg-gray-600 p-1 gap-x-10 justify-between dark:bg-white dark:text-black"
   >
     <div class="flex items-center gap-x-3">
-      <span class="text-left material-symbols-outlined text-lg text-gray-200 dark:text-black">
+      <span
+        class="text-left material-symbols-outlined text-lg text-gray-200 dark:text-black"
+      >
         arrow_back
       </span>
-      <span class="text-left material-symbols-outlined text-lg text-gray-200 dark:text-black">
+      <span
+        class="text-left material-symbols-outlined text-lg text-gray-200 dark:text-black"
+      >
         arrow_forward
       </span>
-      <span class="text-left material-symbols-outlined text-gray-200 dark:text-black text-lg">
+      <span
+        class="text-left material-symbols-outlined text-gray-200 dark:text-black text-lg"
+      >
         refresh
       </span>
     </div>
@@ -26,23 +32,31 @@
 
     <div class="flex items-center gap-x-3">
       <button>
-        <span class="text-left material-symbols-outlined text-white dark:text-black text-lg">
+        <span
+          class="text-left material-symbols-outlined text-white dark:text-black text-lg"
+        >
           bookmarks
         </span>
       </button>
 
-      <router-link to="/profile-login">
-        <span class="text-left material-symbols-outlined text-white dark:text-black text-lg">
+      <h2>
+        <span
+          class="text-left material-symbols-outlined text-white dark:text-black text-lg"
+        >
           account_circle
         </span>
-      </router-link>
+      </h2>
       <button>
-        <span class="text-left material-symbols-outlined text-white dark:text-black text-lg">
+        <span
+          class="text-left material-symbols-outlined text-white dark:text-black text-lg"
+        >
           extension
         </span>
       </button>
-      <button @click="toggleMenu">
-        <span class="text-left material-symbols-outlined text-white dark:text-black text-lg">
+      <button @click="toggleMenu" ref="dropdown">
+        <span
+          class="text-left material-symbols-outlined text-white dark:text-black text-lg"
+        >
           menu
         </span>
       </button>
@@ -84,7 +98,7 @@
     </div>
     <br />
     <div class="px-3 py-1 text-left">
-      <router-link to="/settings">settings</router-link>
+      <h2>settings</h2>
     </div>
     <div class="px-3 py-1 text-left">
       <h2 class="text-left">Help</h2>
@@ -97,6 +111,32 @@
 </template>
 
 <script>
+export default {
+  name: "TopBar",
+  data() {
+    return {
+      isMenuOpen: false,
+    };
+  },
+  created() {
+    document.addEventListener("click", this.dropdown);
+  },
+  unmounted() {
+    document.removeEventListener("click", this.dropdown);
+  },
+  methods: {
+    toggleMenu() {
+      this.isMenuOpen = !this.isMenuOpen;
+    },
+    dropdown(e) {
+      let el = this.$refs.dropdown;
+      let target = e.target;
+      if (el !== target && !el.contains(target)) {
+        this.isMenuOpen = false;
+      }
+    },
+  },
+};
 </script>
 
 <style>

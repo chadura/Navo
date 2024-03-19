@@ -11,7 +11,7 @@ import TopBar from "./components/TopBar.vue";
       class="flex items-start p-5 gap-x-10 sticky top-[72px] bg-gray-800 z-40"
     >
       <div class="flex flex-row gap-1">
-        <img src="@/assets/navo-icon.png" class="w-[50px] h-[50px]" />
+        <img src="./assets/navo-icon.png" class="w-[50px] h-[50px]" />
         <a
           href="https://www.google.com"
           class="py-2 text-2xl font-semibold text-gray-200"
