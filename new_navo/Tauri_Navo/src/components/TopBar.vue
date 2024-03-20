@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex bg-gray-600 p-1 gap-x-10 justify-between dark:bg-white dark:text-black"
+    class="flex bg-gray-600 p-1 gap-x-10 justify-between dark:bg-white dark:text-black relative z-50"
   >
     <div class="flex items-center gap-x-3">
       <span
@@ -22,9 +22,9 @@
 
     <!-- Search Bar -->
     <div
-      class="flex w-[400px] relative border justify-center items-center bg-white dark:text-black rounded-lg"
+      class="flex w-[400px] relative border z-50 justify-center items-center bg-white dark:text-black rounded-lg"
     >
-      <input type="text" placeholder="Search" class="py-3 w-[350px]" />
+      <input type="text" placeholder="Search" class="py-3 w-[350px] outline-none" />
       <span class="material-symbols-outlined absolute right-0 cursor-pointer"
         >Search</span
       >

@@ -19,9 +19,40 @@
     },
     "windows": [
       {
-        "title": "test2",
-        "width": 800,
-        "height": 600
+        "label": "home",
+        "fullscreen": false,
+        "height": 702,
+        "resizable": false,
+        "title": "Navo",
+        "width": 1250,
+        "decorations": false,
+        "url": "index.html",
+        "visible": true,
+        "center": true 
+      },
+      {
+        "label": "list",
+        "fullscreen": false,
+        "height": 650,
+        "resizable": false,
+        "title": "Navo",
+        "width": 875,
+        "decorations": false,
+        "url": "List/index.html",
+        "visible": false,
+        "center": true
+      },
+      {
+        "label": "account",
+        "fullscreen": false,
+        "height": 650,
+        "resizable": false,
+        "title": "Navo",
+        "width": 875,
+        "decorations": false,
+        "url": "Account/index.html",
+        "visible": false,
+        "center": true
       }
     ],
     "security": {

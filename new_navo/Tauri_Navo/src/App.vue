@@ -33,6 +33,7 @@ import settings from "./components/settings/Settings.vue";
         />
         <button
           class="flex items-center justify-center absolute right-4 h-full"
+          @click="openList"
         >
           <span class="material-symbols-outlined text-gray-600 text-2xl">
             search
@@ -44,6 +45,7 @@ import settings from "./components/settings/Settings.vue";
 </template>
 
 <script>
+// import { invoke } from "@tauri-apps/api";
 import TopBar from "./components/TopBar.vue";
 export default {
   name: "HomeView",
@@ -51,6 +53,16 @@ export default {
     TopBar,
     settings,
   },
+  methods: {
+
+    // openList() {
+    //   invoke(" open_settings_window", {}).then((response) => {
+    //     console.log(response);
+    //     this.input_device = response;
+    //   });
+    // },
+  },
+
 };
 </script>
 

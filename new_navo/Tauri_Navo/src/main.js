@@ -5,6 +5,7 @@ import List from "./List.vue";
 import "./index.css";
 
 createApp(App).mount("#app");
+
 createApp(List).mount("#list");
 
 

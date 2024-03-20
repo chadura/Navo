@@ -1,8 +1,4 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import TopBar from "./components/TopBar.vue";
-</script>
+
 
 <template>
   <TopBar />
@@ -10,7 +6,7 @@ import TopBar from "./components/TopBar.vue";
     <div
       class="flex items-start p-5 gap-x-10 sticky top-[72px] bg-gray-800 z-40"
     >
-      <div class="flex flex-row gap-1">
+      <div class="flex flex-row gap-1" @click="openHome()">
         <img src="./assets/navo-icon.png" class="w-[50px] h-[50px]" />
         <a
           href="https://www.google.com"
@@ -125,6 +121,17 @@ import TopBar from "./components/TopBar.vue";
   </div>
 </template>
 
+<script >
+// import { invoke } from "@tauri-apps/api";
+import TopBar from "./components/TopBar.vue";
+export default {
+  methods: {
+    openHome() {
+      // invoke("open_home_window", {}).then((response) => console.log(response));
+    },
+  },
+};
+</script>
 
 <style scoped>
 </style>
