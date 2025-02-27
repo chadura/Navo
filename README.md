@@ -84,7 +84,7 @@ yarn tauri dev
 
 ## Phase - II Features
 
-- [ ] Optimized search engine in developed in Rust
+- [x ] Optimized search engine in developed in Rust
 - [ ] Analytics window and user data tracker
 - [ ] Rewards crypto points system based on user actions
 - [ ] In built VPN support
