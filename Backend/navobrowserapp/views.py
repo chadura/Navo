@@ -1,49 +1,83 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic import TemplateView
+from rest_framework import generics
+from rest_framework.response import Response
 import asyncio
 from .async_ddgs import AsyncDDGS
-from django.http import JsonResponse
+from .serializers import SearchResultSerializer 
+from rest_framework import status
+
+class SearchDDGView(generics.GenericAPIView):
+    serializer_class = SearchResultSerializer
+
+    async def search_ddg(self, keywords):
+        async with AsyncDDGS() as ddgs:
+            results = await ddgs.text(keywords, max_results=100)
+        return results
+
+    def get(self, request, *args, **kwargs):
+        query = self.request.GET.get('query', '')
+        
+        if not query:
+            try:
+                data = request.data
+                query = data.get('query', '')
+            except Exception as e:
+                return Response({'error': 'Error parsing JSON input'}, status=status.HTTP_400_BAD_REQUEST)
+
+        if not query:
+            return Response({'error': 'Query parameter is missing or empty'}, status=status.HTTP_400_BAD_REQUEST)
+
+        results = asyncio.run(self.search_ddg(query))
+
+        serializer = self.get_serializer(results, many=True)
+        return Response({'results': serializer.data})
 
 
-# REFERENCE : https://github.com/deedy5/duckduckgo_search
+class IndexView(TemplateView):
+    template_name = "search_app/index.html"
 
-# Example: Search for "python programming" and get the first 5 results
 
-# from duckduckgo_search import DDGS
+class AutocompleteView(generics.GenericAPIView):
+    serializer_class = SearchResultSerializer
 
-# results = DDGS().text("python programming", max_results=5)
-# print(results)
+    async def search_ddg(self, keywords):
+        async with AsyncDDGS() as ddgs:
+            results = await ddgs.text(keywords, max_results=100)
+        return results
 
-# You can use DDGS also as context manager
-# with DDGS() as ddgs:
-#     results = ddgs.text("python programming", max_results=5)
-#     print(results)
+    def get(self, request, *args, **kwargs):
+        query = self.request.GET.get('query', '')
+        results = asyncio.run(self.search_ddg(query))
 
-async def search_ddg(keywords):
-    async with AsyncDDGS() as ddgs:
-        # keywords = "python programming" # The keywords to search for
-        # max_results = 5 # The maximum number of results to return (avoid blocking from api by reducing the number of results)
-        results = await ddgs.text(keywords, max_results=15)
-    return results
+        serializer = self.get_serializer(results, many=True)
+        return Response({'results': serializer.data})
 
-def index(request):
-    if request.method == "GET":
-        return render(request, "search_app/index.html")
-    elif request.method == "POST":
-        keywords = request.POST.get("keywords", "")
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        results = loop.run_until_complete(search_ddg(keywords))
-        return render(request, "search_app/index.html", {"results": results})
 
-async def autocomplete(request):
-    query = request.GET.get('query', '')
+# class VideoSearchView(generics.GenericAPIView):
+#     serializer_class = VideoSearchResultSerializer
 
-    # Call the search_ddg function to get autocomplete suggestions asynchronously
-    results = await search_ddg(query)
+#     async def search_videos(self, keywords, max_results=100):
+#         async with AsyncDDGS() as ddgs:
+#             video_results = await ddgs.videos(keywords, max_results=max_results)
+#         return video_results
 
-    # Extract titles from the search results to use as autocomplete suggestions
-    suggestions = [{'title': result['title'], 'href': result['href']} for result in results]
+#     def get(self, request, *args, **kwargs):
+#         query = self.request.GET.get('query', '')
+        
+#         if not query:
+#             try:
+#                 data = request.data
+#                 query = data.get('query', '')
+#                 print('query', query)
+#             except Exception as e:
+#                 return Response({'error': 'Error parsing JSON input'}, status=status.HTTP_400_BAD_REQUEST)
+#             if not query:
+#                 return Response({'error': 'Query parameter is missing or empty'}, status=status.HTTP_400_BAD_REQUEST)
 
-    # Return the autocomplete suggestions as JSON response
-    return JsonResponse({'results': suggestions})
+#             video_results = asyncio.run(self.search_videos(query))
+
+#             # Filter out results without 'href' field
+#             valid_results = [result for result in video_results if 'href' in result]
+
+#             serializer = self.get_serializer(video_results, many=True)
+#             return Response({'video_results': serializer.data})

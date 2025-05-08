@@ -1,9 +1,10 @@
 # myapp/urls.py
 from django.urls import path
-from . import views
+from .views import SearchDDGView, IndexView, AutocompleteView
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('autocomplete/', views.autocomplete, name='autocomplete'),
-    # Add other paths here as needed
+    path('', IndexView.as_view(), name='index'),
+    path('search/', SearchDDGView.as_view(), name='search'),
+    path('autocomplete/', AutocompleteView.as_view(), name='autocomplete'),
+    # path('videosearch/', VideoSearchView.as_view(), name='video_search'),
 ]
